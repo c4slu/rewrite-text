@@ -1,19 +1,12 @@
 import { Spinner, HomeContainer, ResultContainer } from "@/styles/pages/home";
-import { Configuration, OpenAIApi } from "openai";
-import {
-  DetailedHTMLProps,
-  FormEvent,
-  FormHTMLAttributes,
-  useEffect,
-  useState,
-} from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [animalInput, setAnimalInput] = useState("");
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function onSubmit(e: React.ChangeEvent<HTMLInputElement>) {
+  async function onSubmit(e: React.ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     try {
@@ -42,8 +35,9 @@ export default function Home() {
       console.error(error);
       alert(error);
     }
-    const inputValue = (e.target as HTMLInputElement).value;
+    const inputValue = (e.target as HTMLFormElement).value;
   }
+
   return (
     <div>
       <HomeContainer>
