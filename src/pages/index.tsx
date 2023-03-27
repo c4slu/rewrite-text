@@ -8,6 +8,7 @@ export default function Home() {
 
   async function onSubmit(e: React.ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
+
     setLoading(true);
     try {
       setResult("");

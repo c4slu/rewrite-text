@@ -6,6 +6,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
+
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   if (!configuration.apiKey) {
     res.status(500).json({
@@ -57,6 +58,6 @@ function generatePrompt(animal: string) {
    
   ${capitalizedAnimal}
 
-  Envie o texto reescrivo em pt-br no lugar da quebra de linha substuir por <br />
+  Envie o texto reescrivo em pt-br
   `;
 }
