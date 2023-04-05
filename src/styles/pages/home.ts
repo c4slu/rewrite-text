@@ -1,14 +1,13 @@
-import { keyframes } from "@stitches/react";
+import { css, keyframes } from "@stitches/react";
 import { styled } from "..";
 
 export const HomeContainer = styled("main", {
   display: "flex",
   flexDirection: "column",
-  width: "100%",
+  width: "100vw",
   maxWidth: "100vw",
+  height: "80vh",
   marginLeft: "auto",
-  minHeight: "100vh",
-  height: "100%",
   alignItems: "center",
   justifyContent: "center",
 
@@ -79,38 +78,6 @@ export const HomeContainer = styled("main", {
     resize: "none",
   },
 
-  button: {
-    placecontent: "flex-start center",
-    flexshrink: 0,
-    display: "flex",
-    marginTop: "1rem",
-    maxWidth: "400px",
-    width: "100%",
-    gap: "6px",
-    "-webkit-box-align": "center",
-    alignItems: "center",
-    "-webkit-box-pack": "center",
-    flexDirection: "row",
-    borderRadius: "8px",
-    border: "1px solid rgb(3, 194, 224)",
-    textDecoration: "none",
-    padding: "14px",
-    fontSize: "14px",
-    backgroundColor: "rgb(3, 194, 224)",
-    transition: "all 0.2s ease-in-out 0s",
-    color: "rgb(255, 255, 255)",
-    textAlign: "center",
-    justifyContent: "center",
-    alignItem: "center",
-    fontWeight: "medium",
-    cursor: "pointer",
-
-    boxShadow: "rgb(18, 119, 151) 0px 0.625rem 2.6875rem",
-
-    "&:hover": {
-      backgroundColor: "transparent",
-    },
-  },
   div: {
     display: "flex",
     alignItems: "center",
@@ -122,21 +89,12 @@ export const HomeContainer = styled("main", {
     marginTop: "2rem",
   },
 });
-
-export const ResultContainer = styled("div", {
-  p: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textAnchor: "start",
-    height: "200px",
-    margin: "100px 0",
-    width: "100vw",
-    color: "white",
-    padding: "0rem 10rem",
-    fontSize: "16px",
-    marginTop: "0rem",
-    // border: "1px solid red",
+const scaleUpVerCenter = keyframes({
+  "0%": {
+    transform: "translateY(0px)",
+  },
+  "100%": {
+    transform: "translateY(-20px)",
   },
 });
 
@@ -150,14 +108,129 @@ const scaleout = keyframes({
   },
 });
 
+const pulse = keyframes({
+  "0%": {
+    transform: "scale(1)",
+  },
+  "50%": {
+    transform: "scale(1.1)",
+  },
+  "100%": {
+    transform: "scale(1)",
+  },
+});
+
+export const ErrorMensage = styled("div", {
+  p: {
+    padding: "10px",
+    backgroundColor: "#F66358",
+    borderRadius: "3px",
+    margin: "10px",
+    fontSize: "15px",
+    color: "#fff",
+    animation: `${scaleUpVerCenter} 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`,
+  },
+});
+
+export const ButtonReescrever = styled("button", {
+  placecontent: "flex-start center",
+  flexshrink: 0,
+  display: "flex",
+  marginTop: "1rem",
+  maxWidth: "400px",
+  width: "100%",
+  gap: "6px",
+  "-webkit-box-align": "center",
+  alignItems: "center",
+  "-webkit-box-pack": "center",
+  flexDirection: "row",
+  borderRadius: "8px",
+  border: "1px solid rgb(3, 194, 224)",
+  textDecoration: "none",
+  padding: "14px",
+  fontSize: "14px",
+  backgroundColor: "rgb(3, 194, 224)",
+  transition: "all 0.2s ease-in-out 0s",
+  color: "rgb(255, 255, 255)",
+  textAlign: "center",
+  justifyContent: "center",
+  alignItem: "center",
+  fontWeight: "medium",
+  cursor: "pointer",
+
+  boxShadow: "rgb(18, 119, 151) 0px 0.625rem 2.6875rem",
+
+  "&:hover": {
+    backgroundColor: "transparent",
+  },
+
+  "&:disabled": {
+    backgroundColor: "red",
+    cursor: "not-allowed",
+  },
+});
+
+export const ResultContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  width: "100vw",
+  alignItems: "center",
+  justifyContent: "center",
+
+  p: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAnchor: "center",
+    margin: "100px 0",
+    width: "50%",
+    color: "white",
+
+    fontSize: "16px",
+    marginTop: "0rem",
+    // border: "1px solid red",
+  },
+});
+
+export const Button = styled("button", {
+  width: "40px",
+  height: "30px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  fontSize: "20px",
+  color: "#fff",
+
+  borderRadius: "4px",
+  backgroundColor: "rgb(3, 194, 224)",
+  cursor: "pointer",
+  marginBottom: "10px",
+  border: "1px solid rgb(3, 194, 224)",
+
+  boxShadow: "rgb(18, 119, 151) 0px 0.3rem 2rem",
+
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "green",
+        transition: "background-color 0.2s ease-in-out",
+        boxShadow: "green 0px 0.3rem 2rem",
+        border: "none",
+      },
+    },
+  },
+});
+
 export const Spinner = styled("div", {
   div: {
     width: "40px",
     height: "40px",
-    margin: "100px auto",
+    margin: "500px auto",
     backgroundColor: "#333",
     borderRadius: "100%",
     animation: `${scaleout} 1s infinite ease-in-out`,
     animationName: `${scaleout}`,
+    position: "absolute",
+    top: "20px",
   },
 });

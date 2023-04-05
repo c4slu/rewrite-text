@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.0.1",
     "@stitches/react": "^1.2.8",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
@@ -21,8 +22,11 @@
     "openai": "^3.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.9",
+    "react-icons": "^4.8.0",
     "typescript": "5.0.2",
-    "validator": "^13.9.0"
+    "validator": "^13.9.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/express": "^4.17.17"

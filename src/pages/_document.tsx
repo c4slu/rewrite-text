@@ -5,6 +5,8 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <title>Rewrite Text ─ Scare</title>
+        <link rel="icon" type="image/png" href="./logo.png" sizes="64x64" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

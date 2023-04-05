@@ -6,7 +6,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   if (!configuration.apiKey) {
     res.status(500).json({
@@ -54,10 +53,8 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 function generatePrompt(animal: string) {
   const capitalizedAnimal =
     animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `Reescreva este texto: 
+  return `Reescreva este texto melhorando ele: 
    
-  ${capitalizedAnimal}
-
-  Envie o texto reescrivo em pt-br
+  "${capitalizedAnimal}"
   `;
 }
