@@ -5,12 +5,15 @@ import {
   ErrorMensage,
   Button,
   ButtonReescrever,
+  Footer,
 } from "@/styles/pages/home";
 import { useState, useRef } from "react";
 import * as z from "zod";
 import { ZodError } from "zod";
 import { AiFillCopy, AiOutlineCheckCircle } from "react-icons/ai";
 import { css } from "@stitches/react";
+import logoImg from "../assets/logo.png";
+import Image from "next/image";
 
 export default function Home() {
   const textareaSchema = z
@@ -127,6 +130,7 @@ export default function Home() {
           </ResultContainer>
         )}
       </HomeContainer>
+      <Footer>Copyright &copy; 2023 | Made by Scare</Footer>
     </div>
   );
 }

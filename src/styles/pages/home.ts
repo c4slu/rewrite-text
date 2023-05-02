@@ -234,3 +234,12 @@ export const Spinner = styled("div", {
     top: "20px",
   },
 });
+
+export const Footer = styled("div", {
+  color: "white",
+  width: "100vw",
+  display: "flex",
+  textAlign: "center",
+  justifyContent: "center",
+  fontSize: "13px",
+});
